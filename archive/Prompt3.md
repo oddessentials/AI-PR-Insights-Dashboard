@@ -1,0 +1,1 @@
+Yes, but you can reference visuals rather than generating them for now. Better yet, if you are aware of an existing visual that makes the point you can hyperlink to it.

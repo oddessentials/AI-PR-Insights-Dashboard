@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AI PR Insights Dashboard</title>
+  <meta name="description" content="Mock UI for the AI PR Insights Dashboard (BMIS 2630 final project)" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="page">
+    <header class="header">
+      <h1>AI PR Insights Dashboard</h1>
+    </header>
+
+    <main class="grid">
+      <!-- KPI: Cycle Time -->
+      <section class="card kpi" tabindex="0" aria-label="Cycle Time 2.3 days, up 0.5 days">
+        <h2 class="muted">Cycle Time</h2>
+        <div class="kpi-value">
+          <span class="big">2.3</span>
+          <span class="unit">days</span>
+        </div>
+        <div class="delta up" title="Change since last month">▲ 0.5 days</div>
+      </section>
+
+      <!-- Chart: Cycle Time trend -->
+      <section class="card chart-card" tabindex="0">
+        <div class="card-row">
+          <h2>Cycle Time</h2>
+          <span class="micro muted">Jan → Apr</span>
+        </div>
+
+        <!-- Lightweight SVG chart -->
+        <svg id="trend" viewBox="0 0 600 240" role="img" aria-label="Cycle time trend line, 1 to 3 days">
+          <defs>
+            <linearGradient id="lineFill" x1="0" x2="0" y1="0" y2="1">
+              <stop offset="0%" stop-color="currentColor" stop-opacity="0.18"/>
+              <stop offset="100%" stop-color="currentColor" stop-opacity="0"/>
+            </linearGradient>
+          </defs>
+
+          <g class="axes">
+            <line x1="50" y1="200" x2="580" y2="200" class="axis"/>
+            <line x1="50" y1="40" x2="50" y2="200" class="axis"/>
+            <text x="50"  y="220" class="tick">Jan</text>
+            <text x="200" y="220" class="tick">Feb</text>
+            <text x="350" y="220" class="tick">Mar</text>
+            <text x="500" y="220" class="tick">Apr</text>
+            <text x="20" y="205" class="tick">1.0</text>
+            <text x="20" y="160" class="tick">1.5</text>
+            <text x="20" y="120" class="tick">2.0</text>
+            <text x="20" y="80"  class="tick">2.5</text>
+            <text x="20" y="45"  class="tick">3.0</text>
+          </g>
+
+          <polyline id="trend-line" class="line" fill="none" stroke="currentColor" stroke-width="3" points="" />
+          <polygon  id="trend-area" fill="url(#lineFill)" points="" />
+        </svg>
+      </section>
+
+      <!-- AI Summary -->
+      <aside class="card summary" tabindex="0">
+        <h2>AI Summary</h2>
+        <p>
+          The average PR cycle time has decreased by <strong>18%</strong> in the past month.
+          Reviewer load is uneven, with some developers managing a high volume of reviews.
+          Overall, the team’s code review process is functioning well, though there are a few
+          outstanding PRs requiring attention.
+        </p>
+      </aside>
+
+      <!-- KPI: Review Depth -->
+      <section class="card kpi" tabindex="0" aria-label="Review Depth 4.6 comments, up 0.8">
+        <h2 class="muted">Review Depth</h2>
+        <div class="kpi-value">
+          <span class="big">4.6</span>
+          <span class="unit">comments</span>
+        </div>
+        <div class="delta up">▲ 0.8 comments</div>
+      </section>
+
+      <!-- Merge Rate -->
+      <section class="card wide" tabindex="0">
+        <h2>Merge Rate</h2>
+        <div class="merge-row">
+          <div class="merge-value">85%</div>
+          <div class="bar" title="Merge rate">
+            <span class="bar-fill" style="--w:85%"></span>
+          </div>
+        </div>
+        <div class="delta down">▼ 5%</div>
+      </section>
+
+      <!-- Team Health -->
+      <section class="card wide" tabindex="0">
+        <h2>Team Health</h2>
+
+        <div class="health-row" title="Reviewer load">
+          <div class="label">Reviewer Load</div>
+          <div class="bar"><span class="bar-fill orange" style="--w:78%"></span></div>
+        </div>
+
+        <div class="health-row" title="PRs waiting on review">
+          <div class="label">PRs Waiting on Review</div>
+          <div class="bar"><span class="bar-fill" style="--w:95%"></span></div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>BMIS 2630 · Mock UI only — no real data.</p>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
