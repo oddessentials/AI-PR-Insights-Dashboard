@@ -197,4 +197,4 @@ Waydev. (2024). *Engineering performance analytics for Azure DevOps, GitHub, and
 
 ---
 
-Would you like this version exported as a **PDF with both visuals embedded** (Competitor Map + Dashboard Mockup) for direct submission or printing?
+https://oddessentials.github.io/AI-PR-Insights-Dashboard/
